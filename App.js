@@ -7,6 +7,8 @@ import HomeScreen from "./app/screens/HomeScreen";
 import NewsCategories from "./app/screens/NewsCategories";
 import LoginScreen from "./app/screens/LoginScreen";
 import AdminScreen from "./app/screens/AdminScreen";
+// import Drawer from "./app/screens/Drawer";
+import Drawer1 from "./app/screens/Drawer";
 
 export default function Main() {
   return (
@@ -15,7 +17,8 @@ export default function Main() {
       {/* <WelcomeScreen></WelcomeScreen> */}
       {/* <LoginScreen></LoginScreen> */}
       {/* <NewsCategories></NewsCategories> */}
-      <AdminScreen></AdminScreen>
+      <Drawer1></Drawer1>
+      {/* <AdminScreen></AdminScreen> */}
     </PaperProvider>
   );
 }

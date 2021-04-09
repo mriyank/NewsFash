@@ -19,7 +19,7 @@ const AdminScreen = () => (
     <ScrollView>
       <Card>
         <Card.Content>
-          <Card.Cover source={{ uri: "https://picsum.photos/100" }} />
+          {/* <Card.Cover source={{ uri: "https://picsum.photos/100" }} /> */}
           <Title>Some random news</Title>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
@@ -37,7 +37,7 @@ const AdminScreen = () => (
 
       <Card>
         <Card.Content>
-          <Card.Cover source={{ uri: "https://picsum.photos/100" }} />
+          {/* <Card.Cover source={{ uri: "https://picsum.photos/100" }} /> */}
           <Title>Some random news</Title>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
@@ -54,7 +54,7 @@ const AdminScreen = () => (
 
       <Card>
         <Card.Content>
-          <Card.Cover source={{ uri: "https://picsum.photos/100" }} />
+          {/* <Card.Cover source={{ uri: "https://picsum.photos/100" }} /> */}
           <Title>Some random news</Title>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
