@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+// import React from "react";
+// import { View } from "react-native";
+// import WelcomeScreen from "./app/screens/WelcomeScreen";
+// import ViewImageScreen from "./app/screens/ViewImageScreen";
+// import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 
-export default function App() {
+// export default function App() {
+// return <ViewImageScreen />;
+// return <ListingDetailsScreen />;
+//   return <WelcomeScreen />;
+// }
+
+import * as React from "react";
+import { AppRegistry } from "react-native";
+import { Provider as PaperProvider } from "react-native-paper";
+import { name as appName } from "./app.json";
+// import App from "./src/App";
+// import WelcomeScreen from "./app/screens/WelcomeScreen";
+import HomeScreen from "./app/screens/HomeScreen";
+
+export default function Main() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <HomeScreen></HomeScreen>
+      {/* <WelcomeScreen></WelcomeScreen> */}
+      {/* <App /> */}
+    </PaperProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+AppRegistry.registerComponent(appName, () => Main);
