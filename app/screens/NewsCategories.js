@@ -7,7 +7,7 @@ import BottomNav from "../components/BottomNav";
 const MORE_ICON = Platform.OS === "ios" ? "dots-horizontal" : "dots-vertical";
 
 const NewsCategories = () => (
-  <ScrollView>
+  <>
     <Appbar.Header>
       <Appbar.Content title="Categories" subtitle={""} />
       {/* <Appbar.Action icon="magnify" onPress={() => {}} /> */}
@@ -15,57 +15,59 @@ const NewsCategories = () => (
     </Appbar.Header>
 
     <SearchBar></SearchBar>
+    <ScrollView>
+      <Card>
+        <Card.Content>
+          <Card.Cover source={{ uri: "https://picsum.photos/100" }} />
+          <Title>Politics</Title>
+          <Paragraph>
+            Check out all the political news, genuineness in this topic group
+          </Paragraph>
+        </Card.Content>
 
-    <Card>
-      <Card.Content>
-        <Card.Cover source={{ uri: "https://picsum.photos/100" }} />
-        <Title>Politics</Title>
-        <Paragraph>
-          Check out all the political news, genuineness in this topic group
-        </Paragraph>
-      </Card.Content>
+        <Card.Actions></Card.Actions>
+      </Card>
 
-      <Card.Actions></Card.Actions>
-    </Card>
+      <Card>
+        <Card.Content>
+          <Card.Cover source={{ uri: "https://picsum.photos/500" }} />
+          <Title>Global News</Title>
+          <Paragraph>We verify the news of global concern</Paragraph>
+        </Card.Content>
+        <Card.Actions></Card.Actions>
+      </Card>
 
-    <Card>
-      <Card.Content>
-        <Card.Cover source={{ uri: "https://picsum.photos/500" }} />
-        <Title>News Global</Title>
-        <Paragraph>We verify the news of global concern</Paragraph>
-      </Card.Content>
-      <Card.Actions></Card.Actions>
-    </Card>
+      <Card>
+        <Card.Content>
+          <Card.Cover source={{ uri: "https://picsum.photos/300" }} />
+          <Title>Celebrity</Title>
+          <Paragraph>
+            Dont trust on paparazzis? Get your news verefied with us!
+          </Paragraph>
+        </Card.Content>
 
-    <Card>
-      <Card.Content>
-        <Card.Cover source={{ uri: "https://picsum.photos/300" }} />
-        <Title>Celebrity</Title>
-        <Paragraph>
-          Dont trust on paparazzis? Get your news verefied with us!
-        </Paragraph>
-      </Card.Content>
+        <Card.Actions></Card.Actions>
+      </Card>
 
-      <Card.Actions></Card.Actions>
-    </Card>
-
-    <Card>
-      <Card.Content>
-        {/* <Card.Cover
+      <Card>
+        <Card.Content>
+          {/* <Card.Cover
           source={require("C:Users/mriya/Documents/GitHubNewsFlash/app/assets/technology.jpg")}
         /> */}
-        <Card.Cover source={{ uri: "https://picsum.photos/500" }} />
+          <Card.Cover source={{ uri: "https://picsum.photos/500" }} />
 
-        <Title>Technology</Title>
-        <Paragraph>
-          Got new tweet form Elon Musk? We test the authenticity for you!
-        </Paragraph>
-      </Card.Content>
+          <Title>Technology</Title>
+          <Paragraph>
+            Got new tweet form Elon Musk? We test the authenticity for you!
+          </Paragraph>
+        </Card.Content>
 
-      <Card.Actions></Card.Actions>
-    </Card>
-    <BottomNav></BottomNav>
-  </ScrollView>
+        <Card.Actions></Card.Actions>
+      </Card>
+
+      <BottomNav></BottomNav>
+    </ScrollView>
+  </>
 );
 
 export default NewsCategories;
