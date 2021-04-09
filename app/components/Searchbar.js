@@ -11,6 +11,7 @@ const SearchBar = () => {
       placeholder="Search"
       onChangeText={onChangeSearch}
       value={searchQuery}
+      icon="shield-search"
     />
   );
 };
