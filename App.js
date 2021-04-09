@@ -11,11 +11,11 @@ import AdminScreen from "./app/screens/AdminScreen";
 export default function Main() {
   return (
     <PaperProvider>
-      <HomeScreen></HomeScreen>
+      {/* <HomeScreen></HomeScreen> */}
       {/* <WelcomeScreen></WelcomeScreen> */}
       {/* <LoginScreen></LoginScreen> */}
       {/* <NewsCategories></NewsCategories> */}
-      {/* <AdminScreen></AdminScreen> */}
+      <AdminScreen></AdminScreen>
     </PaperProvider>
   );
 }

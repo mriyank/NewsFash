@@ -3,6 +3,7 @@ import { Appbar, Card, Title, Paragraph, Button } from "react-native-paper";
 import { Platform, ScrollView } from "react-native";
 import SearchBar from "./../components/Searchbar";
 import BottomNav from "../components/BottomNav";
+import Progressbar from "./../components/Progressbar";
 
 const MORE_ICON = Platform.OS === "ios" ? "dots-horizontal" : "dots-vertical";
 
@@ -26,6 +27,7 @@ const AdminScreen = () => (
             ullamcorper, nisl ligula mattis augue, eu egestas erat diam
             vulputate velit. Praesent risus turpis, tempus eget tincidunt sed.
           </Paragraph>
+          <Progressbar></Progressbar>
         </Card.Content>
         <Card.Actions>
           <Button icon="shield-check">Mark as Real</Button>
