@@ -9,7 +9,9 @@ import LoginScreen from "./app/screens/LoginScreen";
 import TopicGroup from "./app/screens/TopicGroup";
 // import Post from "./app/screens/Post";
 
-import Post from './app/components/Post';
+
+// import Drawer from "./app/screens/Drawer";
+import Drawer1 from "./app/screens/Drawer";
 
 // const HomeRoute = () => <HomeScreen />;
 // const WelcomeRoute = () => <WelcomeScreen />;
@@ -17,7 +19,7 @@ import Post from './app/components/Post';
 const NewsCategoriesRoute = () => <NewsCategories />;
 const TopicGroupRoute = () => <TopicGroup />;
 
-export default function Main() {
+export default function Main() { 
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     { key: 'home', title: 'Home', icon: 'home' },
@@ -31,6 +33,7 @@ export default function Main() {
 
   return (
     <PaperProvider>
+      <Drawer1></Drawer1>
       <BottomNavigation
         navigationState={{ index, routes }}
         onIndexChange={setIndex}
