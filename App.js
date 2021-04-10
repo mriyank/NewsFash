@@ -1,6 +1,9 @@
 import * as React from "react";
 import { AppRegistry } from "react-native";
-import { BottomNavigation, Provider as PaperProvider } from "react-native-paper";
+import {
+  BottomNavigation,
+  Provider as PaperProvider,
+} from "react-native-paper";
 import { name as appName } from "./app.json";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import HomeScreen from "./app/screens/HomeScreen";
@@ -9,9 +12,12 @@ import LoginScreen from "./app/screens/LoginScreen";
 import TopicGroup from "./app/screens/TopicGroup";
 // import Post from "./app/screens/Post";
 
+// *******************Drawer***********************
 
 // import Drawer from "./app/screens/Drawer";
-import Drawer1 from "./app/screens/Drawer";
+// import Drawer1 from "./app/screens/Drawer";
+// import { DrawerContent } from "./app/screens/DrawerContent";
+// ******************************
 
 // const HomeRoute = () => <HomeScreen />;
 // const WelcomeRoute = () => <WelcomeScreen />;
@@ -19,21 +25,20 @@ import Drawer1 from "./app/screens/Drawer";
 const NewsCategoriesRoute = () => <NewsCategories />;
 const TopicGroupRoute = () => <TopicGroup />;
 
-export default function Main() { 
+export default function Main() {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'home', title: 'Home', icon: 'home' },
-    { key: 'profile', title: 'Profile', icon: 'account' }
+    { key: "home", title: "Home", icon: "home" },
+    { key: "profile", title: "Profile", icon: "account" },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
     home: NewsCategoriesRoute,
-    profile: TopicGroupRoute
+    profile: TopicGroupRoute,
   });
 
   return (
     <PaperProvider>
-      <Drawer1></Drawer1>
       <BottomNavigation
         navigationState={{ index, routes }}
         onIndexChange={setIndex}
