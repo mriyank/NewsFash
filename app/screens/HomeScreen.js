@@ -86,8 +86,7 @@ const HomeScreen = () => (
           <Button icon="skull-crossbones">Fake</Button>
         </Card.Actions>
       </Card>
-
-      <BottomNav></BottomNav>
+      
     </ScrollView>
   </>
 );

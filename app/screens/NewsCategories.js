@@ -1,20 +1,22 @@
 import * as React from "react";
 import { Appbar, Card, Title, Paragraph } from "react-native-paper";
-import { Platform, ScrollView } from "react-native";
+import { Platform, ScrollView, StyleSheet, View } from "react-native";
 import SearchBar from "./../components/Searchbar";
 import BottomNav from "../components/BottomNav";
+// import styles from "../config/styles";
 
 const MORE_ICON = Platform.OS === "ios" ? "dots-horizontal" : "dots-vertical";
 
 const NewsCategories = () => (
-  <>
+  <View style={styles.cont}>
     <Appbar.Header>
       <Appbar.Content title="Categories" subtitle={""} />
       {/* <Appbar.Action icon="magnify" onPress={() => {}} /> */}
-      <Appbar.Action icon={MORE_ICON} onPress={() => {}} />
+      <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
     </Appbar.Header>
 
-    <SearchBar></SearchBar>
+    <SearchBar />
+
     <ScrollView>
       <Card>
         <Card.Content>
@@ -65,9 +67,18 @@ const NewsCategories = () => (
         <Card.Actions></Card.Actions>
       </Card>
 
-      <BottomNav></BottomNav>
     </ScrollView>
-  </>
+    <View style={{ flex: 1 }}>
+      <BottomNav />
+    </View>
+  </View>
 );
 
 export default NewsCategories;
+
+
+const styles = StyleSheet.create({
+  cont: {
+    flex: 1
+  }
+});
