@@ -1,50 +1,49 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { AppRegistry } from "react-native";
 import {
-  BottomNavigation,
+  Paragraph,
   Provider as PaperProvider,
 } from "react-native-paper";
+
+import { NavigationContainer } from '@react-navigation/native';
+import RootNavigator from './app/layout/RootNavigator';
+
 import { name as appName } from "./app.json";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import HomeScreen from "./app/screens/HomeScreen";
-import NewsCategories from "./app/screens/NewsCategories";
-import LoginScreen from "./app/screens/LoginScreen";
-import TopicGroup from "./app/screens/TopicGroup";
-// import Post from "./app/screens/Post";
 
-// *******************Drawer***********************
+import Display from './app/components/Display';
 
-// import Drawer from "./app/screens/Drawer";
-// import Drawer1 from "./app/screens/Drawer";
-// import { DrawerContent } from "./app/screens/DrawerContent";
-// ******************************
-
-// const HomeRoute = () => <HomeScreen />;
-// const WelcomeRoute = () => <WelcomeScreen />;
-// const LoginRoute = () => <LoginScreen />;
-const NewsCategoriesRoute = () => <NewsCategories />;
-const TopicGroupRoute = () => <TopicGroup />;
 
 export default function Main() {
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: "home", title: "Home", icon: "home" },
-    { key: "profile", title: "Profile", icon: "account" },
-  ]);
 
-  const renderScene = BottomNavigation.SceneMap({
-    home: NewsCategoriesRoute,
-    profile: TopicGroupRoute,
+  const [auth, setAuth] = React.useState({
+    isAuthenticated: true
   });
+
+
+
+
+  useEffect(() => {
+
+    // setTimeout(, 5000);
+
+  }, []);
+
 
   return (
     <PaperProvider>
-      <BottomNavigation
-        navigationState={{ index, routes }}
-        onIndexChange={setIndex}
-        renderScene={renderScene}
-      />
+      <NavigationContainer>
+
+        <Display show={!auth.isAuthenticated}>
+          <Paragraph onPress={() => setAuth({ isAuthenticated: true })}>Authenticating...</Paragraph>
+        </Display >
+
+        <Display show={auth.isAuthenticated}>
+          <RootNavigator />
+        </Display>
+
+      </NavigationContainer>
     </PaperProvider>
+
   );
 }
 

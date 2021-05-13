@@ -10,24 +10,28 @@ import Post from "../components/Post";
 
 const MORE_ICON = Platform.OS === "ios" ? "dots-horizontal" : "dots-vertical";
 
-const TopicGroup = () => (
+const TopicGroup = ({ navigation }) => (
+
   <View style={styles.cont}>
-    <Appbar.Header>
-      <Appbar.BackAction onPress={() => { }} />
+
+    <Appbar.Header statusBarHeight={0}>
+      <Appbar.BackAction onPress={navigation.goBack} />
       <Appbar.Content title="News Affairs" subtitle={"we consider news of golbal importance."} />
       {/* <Appbar.Action icon={MORE_ICON} onPress={() => { }} /> */}
       <Text style={styles.access}>Collaborator</Text>
     </Appbar.Header>
+
+
     <ScrollView>
       <Post
         name="Neetigya Chahar"
         timestamp="3h"
         newsHeadline="Corona can only infect in day light says Pakistan's Prime Minister."
         newsDesc="As corona cases are rising and the preventive measuers being taken by Pakistani government are lacking behind, the PM Imran Khan in the preventive measuers being taken by Pakistani government are lacking behind, the PM Imran Khan in a public meeting said 'Corona is spread by the help of sun light. Hence it can only be spread in broad day light!'. Opposition back fires. "
-        realVoteCount="69"
+        realVoteCount="990"
         fakeVoteCount="401"
-        aiProbab="0.31"
-        judgement="fake"
+        aiProbab="0.71"
+        judgement="real"
       />
 
       <Post
@@ -63,7 +67,7 @@ const TopicGroup = () => (
         judgement="fake"
       />
     </ScrollView>
-    
+
   </View>
 );
 
@@ -71,7 +75,8 @@ export default TopicGroup;
 
 const styles = StyleSheet.create({
   cont: {
-    backgroundColor: '#000561'
+    backgroundColor: '#000561',
+    flex: 1
   },
   access: {
     color: "white",
