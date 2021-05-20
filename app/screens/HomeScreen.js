@@ -16,7 +16,7 @@ const MORE_ICON = Platform.OS === "ios" ? "dots-horizontal" : "dots-vertical";
 const HomeScreen = () => (
   <>
     <Appbar.Header>
-      <Appbar.Content title="NewsFlash" subtitle={""} />
+      <Appbar.Content title="NewsFash" subtitle={""} />
       <Appbar.Action icon={MORE_ICON} onPress={() => {}} />
     </Appbar.Header>
 

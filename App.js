@@ -1,54 +1,36 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { AppRegistry } from "react-native";
-import {
-  BottomNavigation,
-  Provider as PaperProvider,
-} from "react-native-paper";
+import { Paragraph, Provider as PaperProvider } from "react-native-paper";
+
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from "./app/layout/RootNavigator";
+
 import { name as appName } from "./app.json";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import HomeScreen from "./app/screens/HomeScreen";
-import NewsCategories from "./app/screens/NewsCategories";
-import LoginScreen from "./app/screens/LoginScreen";
-import TopicGroup from "./app/screens/TopicGroup";
-// import Post from "./app/screens/Post";
 
-import Post from "./app/components/Post";
-import GroupScreen from "./app/screens/GroupScreen";
-import AdminScreen from "./app/screens/AdminScreen";
-
-// const HomeRoute = () => <HomeScreen />;
-// const WelcomeRoute = () => <WelcomeScreen />;
-// const LoginRoute = () => <LoginScreen />;
-const NewsCategoriesRoute = () => <NewsCategories />;
-const TopicGroupRoute = () => <TopicGroup />;
+import Display from "./app/components/Display";
 
 export default function Main() {
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: "home", title: "Home", icon: "home" },
-    { key: "profile", title: "Profile", icon: "account" },
-  ]);
-
-  const renderScene = BottomNavigation.SceneMap({
-    home: NewsCategoriesRoute,
-    profile: TopicGroupRoute,
+  const [auth, setAuth] = React.useState({
+    isAuthenticated: true,
   });
+
+  useEffect(() => {
+    // setTimeout(, 5000);
+  }, []);
 
   return (
     <PaperProvider>
-      {/* <GroupScreen></GroupScreen> */}
+      <NavigationContainer>
+        <Display show={!auth.isAuthenticated}>
+          <Paragraph onPress={() => setAuth({ isAuthenticated: true })}>
+            Authenticating...
+          </Paragraph>
+        </Display>
 
-      <WelcomeScreen></WelcomeScreen>
-
-      {/* <LoginScreen></LoginScreen> */}
-
-      {/* <AdminScreen></AdminScreen> */}
-
-      {/* <BottomNavigation
-        navigationState={{ index, routes }}
-        onIndexChange={setIndex}
-        renderScene={renderScene}
-      /> */}
+        <Display show={auth.isAuthenticated}>
+          <RootNavigator />
+        </Display>
+      </NavigationContainer>
     </PaperProvider>
   );
 }
