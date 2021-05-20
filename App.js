@@ -12,12 +12,9 @@ import LoginScreen from "./app/screens/LoginScreen";
 import TopicGroup from "./app/screens/TopicGroup";
 // import Post from "./app/screens/Post";
 
-// *******************Drawer***********************
-
-// import Drawer from "./app/screens/Drawer";
-// import Drawer1 from "./app/screens/Drawer";
-// import { DrawerContent } from "./app/screens/DrawerContent";
-// ******************************
+import Post from "./app/components/Post";
+import GroupScreen from "./app/screens/GroupScreen";
+import AdminScreen from "./app/screens/AdminScreen";
 
 // const HomeRoute = () => <HomeScreen />;
 // const WelcomeRoute = () => <WelcomeScreen />;
@@ -39,11 +36,19 @@ export default function Main() {
 
   return (
     <PaperProvider>
-      <BottomNavigation
+      {/* <GroupScreen></GroupScreen> */}
+
+      <WelcomeScreen></WelcomeScreen>
+
+      {/* <LoginScreen></LoginScreen> */}
+
+      {/* <AdminScreen></AdminScreen> */}
+
+      {/* <BottomNavigation
         navigationState={{ index, routes }}
         onIndexChange={setIndex}
         renderScene={renderScene}
-      />
+      /> */}
     </PaperProvider>
   );
 }
