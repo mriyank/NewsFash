@@ -8,6 +8,7 @@ import RootNavigator from "./app/layout/RootNavigator";
 import { name as appName } from "./app.json";
 
 import Display from "./app/components/Display";
+// import AccountScreen from "./app/screens/AccountScreen";
 
 export default function Main() {
   const [auth, setAuth] = React.useState({
@@ -20,6 +21,7 @@ export default function Main() {
 
   return (
     <PaperProvider>
+      {/* <AccountScreen></AccountScreen> */}
       <NavigationContainer>
         <Display show={!auth.isAuthenticated}>
           <Paragraph onPress={() => setAuth({ isAuthenticated: true })}>
